@@ -1,0 +1,34 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
+import { HabilidadesComponent } from './components/habilidades/habilidades.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { FormsModule } from '@angular/forms';
+import { ResumenComponent } from './components/resumen/resumen.component';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    InicioComponent,
+    SobreMiComponent,
+    HabilidadesComponent,
+    ProyectosComponent,
+    ContactoComponent,
+    ResumenComponent,
+  
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

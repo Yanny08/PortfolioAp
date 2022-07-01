@@ -1,0 +1,48 @@
+<!--header-->
+<header id="Inicio">
+    <nav class="navbar">
+        <div class="nav_logos" id="logos">
+            <img class="logo_argprograma" src="../assets/APLogo.png" width="110" height="40" id="ArgenPrograma">
+            <img class="logo_inti" src="../assets/LogoInti.png" width="50" height="50" id="INTI">
+            <img class="logo_ministerio" src="../assets/LogoMinisterio.png" width="150" height="60" id="Ministerio">
+            
+        </div>
+        <!-- <span class="css-1rohdmw">
+            "<"
+           <span>
+           <div style="display:incline-clock">Yanina Loiacono</div>
+           <span style="display: incline-block; transition: opacity 0.5s ease 0s;"></span>
+           </span>
+           "/>"
+        </span> -->
+        <!-- botom modal -->
+        <div class="boton-login" id="boton-login">
+            <a href="#" class="logout_btn">Login</a>
+        </div>
+        <div class="toggle-btn" (click)="mostrarBarra()">
+            <i class="bi bi-list fs-4"></i>
+        </div>
+    </nav>
+</header>
+    <!--Barra de Navegacion-->
+    <aside class="sidebar" id="menu-lateral" [ngClass]="{'mostrarLateral': barraActiva}">
+        <div class="menu-bar">
+            <img class="img-fluid" src="../assets/perfil1.jpg">
+            <h4>Yanina Loiacono</h4>
+            <i class="edit-icon bi bi-pencil-square"></i>
+            <a href="#Inicio"><i class="bi bi-display fs-4"></i><span>Inicio</span></a>
+            <a href="#SobreMi"><i class="bi bi-person-video2 fs-4"></i><span>Sobre mí</span></a>
+            <a href="#Resumen"><i class="bi bi-award fs-4"></i><span>Resumen</span></a>
+            <a href="#Skills"><i class="bi bi-diagram-3 fs-4"></i><span>Habilidades</span></a>
+            <a href="#Proyect"><i class="bi bi-code-slash fs-4"></i><span>Proyectos</span></a>
+            <a href="#Contact"><i class="bi bi-envelope fs-4"></i><span>Contacto</span></a>
+        </div>
+    </aside>
+    <!--BANNER-->
+    <main class="banner">
+        <i class="edit-icon bi bi-pencil-square"></i>
+        <!-- <div class="banner_titulo" id="banner-titulo">
+            <h1 class="display-3 fw-bold">Yanina Loiacono</h1>
+            <h3>Desarrollador@ Web Fullstack</h3>
+        </div> -->
+    </main>
