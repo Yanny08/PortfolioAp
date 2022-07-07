@@ -8,8 +8,11 @@ import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResumenComponent } from './components/resumen/resumen.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -26,7 +29,11 @@ import { ResumenComponent } from './components/resumen/resumen.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AlifeFileToBase64Module
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,12 @@
 <!-- Seccion Sobre Mí/Home-->
-<section class="home-info container" id="SobreMi">
+<section class="home-info container" id="SobreMi" *ngFor="let sobre_Mi of sobreMi">
     <div class="row">
         <div class="col-lg-8">
             <div class="row">
                 <div class="col-4 text-center content-borders" id="home-icons">
-                    <a href="#"><i class="bi bi-github" style="color:#9900ff;" id="github"></i></a>
-                    <a href="#"><i class="bi bi-linkedin" style="color:#0471ff;" id="linkedin"></i></a>
-                    <a href="#"><i class="bi bi-discord" style="color:#ff6600;" id="discord"></i></a>
+                    <a href="{{sobre_Mi.linkGit}}"><i class="bi bi-github" style="color:#9900ff;" id="github"></i></a>
+                    <a href="{{sobre_Mi.linkLinke}}"><i class="bi bi-linkedin" style="color:#0471ff;" id="linkedin"></i></a>
+                    <a href="{{sobre_Mi.linkDisc}}"><i class="bi bi-discord" style="color:#ff6600;" id="discord"></i></a>
                 </div>
                 <div class="col-8 content-borders">
                     <div class="position-relative d-flex aling-iteams-center justify-content-center">
@@ -14,7 +14,7 @@
                         <h3 class="position-absolute fw-bold" id="section-title">Sobre mí</h3>
                     </div>
                     <div class="row content-borders">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo pariatur ex eos excepturi ut itaque quibusdam aliquid maxime quis voluptatum soluta quia similique laborum, vero totam nesciunt magni odio aspernatur?
+                        <p>{{sobre_Mi.descripcion}}
                         </p>
                     </div>
                     <div class="row content-borders">
@@ -27,9 +27,53 @@
         </div>
         <div class="col-lg-4">
             <div>
-                <img src="../assets/perfil2.png" id="home-perfil" class="img-fluid">
-                <i class="edit-icon bi bi-pencil-square"></i>
+                <img src="{{sobre_Mi.img}}" accept="image/*" id="home-perfil" class="img-fluid">
+                <i class="edit-icon bi bi-pencil-square" (click)="openEdit(contentEdit,sobre_Mi)"></i>
             </div>
         </div>
     </div>
 </section>
+
+<!-- EDITAR MODAL -->
+<ng-template #contentEdit let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title2">Editar SobreMi</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    
+    <form [formGroup]="editForm">
+
+      <div class="form-group">
+        <label>linkGit </label>
+        <input type="text" name="linkGit" id="" class="form-control" formControlName="linkGit" value="">
+      </div>
+      <div class="form-group">
+        <label>linkDisc</label>
+        <input type="text" name="linkDisc" id="" class="form-control" formControlName="linkDisc" value="">
+      </div>
+      <div class="form-group">
+        <label>linkLinke</label>
+        <input type="text" name="linkLinke" id="" class="form-control" formControlName="linkLinke" value="">
+      </div>
+      <div class="form-group">
+        <label for="descripcion">descripcion</label>
+          <textarea formControlName="descripcion" class="form-control" rows="5" cols="10"></textarea>
+      </div>
+      <div class="form-group">
+        <label>img</label>
+        <input type="file" alife-file-to-base64 accept="image/png,image/jpg" name="file"
+          (onFileChanged)="obtener($event)" class="form-control" placeholder=""  >
+      </div>
+
+    </form>
+
+
+    <div class="modal-footer">
+      <button data-dismiss="modal" class="btn btn-primary" (click)="editar()">Actualizar</button>
+      <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Cerrar</button>
+    </div>
+  </div>
+</ng-template>

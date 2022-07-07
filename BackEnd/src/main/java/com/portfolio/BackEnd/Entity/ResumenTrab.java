@@ -9,19 +9,20 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-public class SobreMi {
-    @Id
+public class ResumenTrab {
+     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
-    private String linkGit;
     
-    private String linkDisc;
+    private String puesto;
     
-    private String linkLinke;
+    private String organismo;
+    
+    private String fechaIni;
+     
+    private String fechaFin;
     
     private String descripcion;
-    
-    private String img;
     
 }
